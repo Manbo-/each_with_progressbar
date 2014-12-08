@@ -7,7 +7,7 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    ruby-progressbar (1.6.0)
+    ruby-progressbar (1.7.0)
 
 PLATFORMS
   ruby
