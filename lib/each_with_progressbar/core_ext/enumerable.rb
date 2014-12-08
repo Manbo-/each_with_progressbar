@@ -1,8 +1,9 @@
 require 'ruby-progressbar'
 
 module Enumerable
-  def each_with_progressbar(options = {})
-    progressbar = respond_to?(:length) ? ProgressBar.create(total: self.length) : ProgressBar.create()
+  def each_with_progressbar(options = { format: "%t: |%B| %p%% %c/%C %E" })
+    options.merge!(total: length) if respond_to?(:length)
+    progressbar = ProgressBar.create(options)
     each do |blk|
       progressbar.increment
       yield blk
